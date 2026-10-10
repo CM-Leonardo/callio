@@ -153,8 +153,20 @@ function AndroidNavBar({ dark = false, bg }) {
 // ─────────────────────────────────────────────────────────────
 function AndroidDevice({
   children, width = 412, height = 892, dark = false, bg,
-  title, large = false, keyboard = false, navBg,
+  title, large = false, keyboard = false, navBg, bare = false,
 }) {
+  if (bare) return (
+    <div data-om-starter="android-frame" style={{
+      width: '100%', height: '100%', overflow: 'hidden',
+      background: bg || (dark ? '#1d1b20' : MD_C.surface),
+      display: 'flex', flexDirection: 'column', boxSizing: 'border-box',
+      paddingLeft: 'env(safe-area-inset-left)', paddingRight: 'env(safe-area-inset-right)',
+    }}>
+      <div style={{ height: 'env(safe-area-inset-top)', flexShrink: 0 }} />
+      <div style={{ flex: 1, minHeight: 0, overflow: 'auto' }}>{children}</div>
+      <div style={{ height: 'env(safe-area-inset-bottom)', flexShrink: 0, background: navBg || bg }} />
+    </div>
+  );
   return (
     // data-om-starter: inert presence marker — Claude Design's starter-usage
     // probe reads it; it renders nothing. Keep it on this root element.
