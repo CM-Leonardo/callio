@@ -16,9 +16,9 @@
   <link rel="stylesheet" href="_ds/callio-design-system-481f8d2f-23b4-437b-b9cf-c91628ac6793/components/forms/fig-assets.css">
   <link rel="stylesheet" href="_ds/callio-design-system-481f8d2f-23b4-437b-b9cf-c91628ac6793/styles.css">
   <script src="_ds/callio-design-system-481f8d2f-23b4-437b-b9cf-c91628ac6793/_ds_bundle.js"></script>
-  <style>@font-face{font-family:'DM Sans';src:url(fonts/DMSans-Variable.ttf) format('truetype');font-weight:100 1000;font-style:normal;font-display:swap}@font-face{font-family:'DM Sans';src:url(fonts/DMSans-Italic-Variable.ttf) format('truetype');font-weight:100 1000;font-style:italic;font-display:swap}html,body{height:100%;overflow:hidden;overscroll-behavior:none;-webkit-text-size-adjust:100%;text-size-adjust:100%}*{-webkit-tap-highlight-color:transparent}@media (pointer:coarse){input,textarea,select{font-size:16px !important}}body{margin:0;font-optical-sizing:auto;background:var(--app-bg-deep);font-family:var(--font-app);-webkit-font-smoothing:antialiased;color:#FFFFFF}a{color:var(--lightblue-500)}a:hover{color:var(--app-text-muted)}@keyframes cal-pop{0%{transform:scale(.6);opacity:0}70%{transform:scale(1.08)}100%{transform:scale(1);opacity:1}}@keyframes cal-ring{0%{transform:scale(.8);opacity:.9}100%{transform:scale(1.6);opacity:0}}@keyframes cal-spin{to{transform:rotate(360deg)}}@keyframes cal-shimmer{0%{opacity:.5}50%{opacity:1}100%{opacity:.5}}</style>
+  <style>@font-face{font-family:'DM Sans';src:url(fonts/DMSans-Variable.ttf) format('truetype');font-weight:100 1000;font-style:normal;font-display:swap}@font-face{font-family:'DM Sans';src:url(fonts/DMSans-Italic-Variable.ttf) format('truetype');font-weight:100 1000;font-style:italic;font-display:swap}html,body{height:100%;overflow:hidden;overscroll-behavior:none;}.cal-root{height:100%;height:100dvh}.cal-screen{min-height:0;overflow-x:hidden;overflow-y:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}.cal-screen::-webkit-scrollbar{display:none}.cal-center{justify-content:center;justify-content:safe center}@media (max-width:359px){.cal-nav-label{display:none}}html,body{-webkit-text-size-adjust:100%;text-size-adjust:100%}*{-webkit-tap-highlight-color:transparent}@media (pointer:coarse){input,textarea,select{font-size:16px !important}}body{margin:0;font-optical-sizing:auto;background:var(--app-bg-deep);font-family:var(--font-app);-webkit-font-smoothing:antialiased;color:#FFFFFF}a{color:var(--lightblue-500)}a:hover{color:var(--app-text-muted)}@keyframes cal-pop{0%{transform:scale(.6);opacity:0}70%{transform:scale(1.08)}100%{transform:scale(1);opacity:1}}@keyframes cal-ring{0%{transform:scale(.8);opacity:.9}100%{transform:scale(1.6);opacity:0}}@keyframes cal-spin{to{transform:rotate(360deg)}}@keyframes cal-shimmer{0%{opacity:.5}50%{opacity:1}100%{opacity:.5}}</style>
 </helmet>
-<div style="min-height:100vh;height:100dvh;width:100%;box-sizing:border-box;display:flex;justify-content:center;align-items:center;overflow:hidden;font-family:var(--font-app)">
+<div class="cal-root" style="width:100%;box-sizing:border-box;display:flex;justify-content:center;align-items:center;overflow:hidden;font-family:var(--font-app)">
   <div style="zoom:{{ scale }};width:{{ shell.w }};height:{{ shell.h }}">
 
   <x-import component-from-global-scope="AndroidDevice" from="./android-frame.jsx" width="{{ shell.fw }}" height="{{ shell.fh }}" bare="{{ shell.bare }}" style="width:{{ shell.w }};height:{{ shell.h }}" dark="{{ isDark }}" bg="{{ screenBg }}" nav-bg="{{ navBg }}" hint-size="405px,856px">
@@ -43,7 +43,7 @@
 
       <!-- ONBOARDING APRESENTAÇÃO -->
       <sc-if value="{{ is.onb }}" hint-placeholder-val="{{ false }}">
-        <div style="flex:1;min-height:0;display:flex;flex-direction:column;padding:8px 24px 24px;gap:20px;position:relative;overflow:hidden;color:{{ onb.fg }}">
+        <div class="cal-screen" style="flex:1;display:flex;flex-direction:column;padding:8px 24px 24px;gap:20px;position:relative;color:{{ onb.fg }}">
           <svg width="420" height="420" viewBox="0 0 420 420" style="position:absolute;right:-170px;top:120px;pointer-events:none"><path d="M40 210 C 40 90, 200 30, 300 90 S 400 300, 260 360 S 60 360, 90 250" fill="none" stroke="{{ onb.line }}" stroke-width="3" stroke-linecap="round"></path></svg>
           <svg width="260" height="260" viewBox="0 0 260 260" style="position:absolute;left:-130px;bottom:60px;pointer-events:none"><path d="M20 130 C 20 40, 200 20, 230 110 S 120 250, 60 190" fill="none" stroke="{{ onb.line }}" stroke-width="3" stroke-linecap="round"></path></svg>
           <div style="display:flex;justify-content:space-between;align-items:center;position:relative">
@@ -54,8 +54,8 @@
             <h1 style="margin:0;font-size:36px;line-height:1.1;font-weight:700;letter-spacing:-.02em;text-wrap:balance">{{ onb.pre }}<span style="white-space:nowrap"><span style="position:relative;display:inline-block">{{ onb.key }}<sc-if value="{{ onb.circle }}" hint-placeholder-val="{{ true }}"><svg viewBox="0 0 120 50" preserveAspectRatio="none" style="position:absolute;left:-12%;top:-14%;width:124%;height:128%;overflow:visible;pointer-events:none"><path d="M10 30 C 6 12, 58 3, 98 8 C 124 12, 120 40, 82 46 C 42 52, 2 44, 14 20" fill="none" stroke="{{ onb.accent }}" stroke-width="3" stroke-linecap="round" vector-effect="non-scaling-stroke"></path></svg></sc-if><sc-if value="{{ onb.under }}" hint-placeholder-val="{{ false }}"><svg viewBox="0 0 120 12" preserveAspectRatio="none" style="position:absolute;left:-2%;bottom:-8px;width:104%;height:12px;overflow:visible;pointer-events:none"><path d="M2 8 C 20 2, 34 12, 52 6 S 86 2, 118 7" fill="none" stroke="{{ onb.accent }}" stroke-width="3.5" stroke-linecap="round" vector-effect="non-scaling-stroke"></path></svg></sc-if></span>{{ onb.keyTail }}</span>{{ onb.post }}</h1>
             <p style="margin:0;font-size:16px;line-height:1.5;color:{{ onb.sub }};text-wrap:pretty">{{ onb.body }}</p>
           </div>
-          <div style="flex:1;min-height:0;display:flex;justify-content:center;position:relative">
-            <div style="width:248px;max-height:100%;height:100%;border-radius:124px 124px 28px 28px;background:{{ onb.archBg }};display:flex;align-items:center;justify-content:center;overflow:hidden">
+          <div style="flex:1;min-height:160px;display:flex;justify-content:center;position:relative">
+            <div style="width:248px;max-width:100%;max-height:100%;height:100%;border-radius:124px 124px 28px 28px;background:{{ onb.archBg }};display:flex;align-items:center;justify-content:center;overflow:hidden">
               <span style="font-size:13px;font-weight:500;color:{{ onb.sub }};text-align:center;padding:0 24px">Ilustração · {{ onb.art }}</span>
             </div>
           </div>
@@ -478,7 +478,7 @@
 
       <!-- LOADING DE AUTENTICAÇÃO -->
       <sc-if value="{{ is.ssoLoading }}" hint-placeholder-val="{{ false }}">
-        <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;padding:24px">
+        <div class="cal-screen cal-center" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:28px;padding:24px">
           <div style="position:relative;width:112px;height:112px;display:flex;align-items:center;justify-content:center">
             <div style="position:absolute;inset:0;border-radius:50%;box-shadow:inset 0 0 0 3px var(--app-surface)"></div>
             <div style="position:absolute;inset:0;border-radius:50%;border:3px solid transparent;border-top-color:var(--lightblue-500);border-right-color:var(--lightblue-500);animation:cal-spin 1s linear infinite"></div>
@@ -493,8 +493,8 @@
 
       <!-- BOAS-VINDAS -->
       <sc-if value="{{ is.welcome }}" hint-placeholder-val="{{ false }}">
-        <div style="flex:1;display:flex;flex-direction:column;padding:24px 20px 24px;gap:24px">
-          <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:24px">
+        <div class="cal-screen" style="flex:1;display:flex;flex-direction:column;padding:24px 20px 24px;gap:24px">
+          <div class="cal-center" style="flex:1;display:flex;flex-direction:column;gap:24px">
             <div style="display:flex;animation:cal-pop .7s cubic-bezier(.2,.8,.2,1) both"><img src="assets/symbol-lightblue.svg" alt="Callio" style="width:64px;height:60px;display:block"></div>
             <div style="display:flex;flex-direction:column;gap:12px">
               <h1 style="margin:0;font-size:32px;font-weight:700;line-height:1.15;text-wrap:pretty">Boas-vindas ao Callio, {{ sso.first }}.</h1>
@@ -797,24 +797,24 @@
 
       <!-- MODO LEITURA -->
       <sc-if value="{{ is.reading }}" hint-placeholder-val="{{ false }}">
-        <div style="flex:1;display:flex;flex-direction:column;padding:12px 20px 32px;color:#FFFFFF;position:relative">
+        <div class="cal-screen" style="flex:1;display:flex;flex-direction:column;padding:12px 20px 32px;color:#FFFFFF;position:relative">
           <div style="position:absolute;top:12px;left:20px;right:20px;display:flex;align-items:center;justify-content:space-between;z-index:1">
             <button onClick="{{ go.home }}" aria-label="Voltar" style="width:44px;height:44px;border-radius:12px;border:0;background:transparent;color:#FFFFFF;cursor:pointer;display:flex;align-items:center;justify-content:center;margin-left:-12px"><span style="display:inline-flex;line-height:0;flex-shrink:0"><x-import component-from-global-scope="CallioDesignSystem_481f8d.Icon" name="ArrowChevronLeft" size="{{ 20 }}" hint-size="20px,20px"></x-import></span></button>
             <div></div>
             <div style="width:44px"></div>
           </div>
-          <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px">
+          <div class="cal-center" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:28px;padding-top:44px">
             <div style="display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center">
               <span style="font-size:14px;color:var(--app-text-muted)">Lendo</span>
               <span style="font-size:17px;font-weight:600;color:#FFFFFF">Os Sete Maridos de Evelyn Hugo</span>
             </div>
-            <div style="width:260px;height:260px;border-radius:50%;background:var(--purple-800);box-shadow:inset 0 0 0 6px var(--app-surface-raised);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px">
+            <div style="width:min(260px, 100%);aspect-ratio:1;flex-shrink:0;border-radius:50%;background:var(--purple-800);box-shadow:inset 0 0 0 6px var(--app-surface-raised);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px">
               <span style="font-size:64px;font-weight:700;letter-spacing:-.03em;font-variant-numeric:tabular-nums;line-height:1">{{ timer }}</span>
               <span style="font-size:14px;color:var(--app-text-muted)">{{ timerHint }}</span>
             </div>
             <span style="font-size:15px;color:var(--lightblue-500);text-align:center;text-wrap:pretty">Foco ligado. O resto pode esperar.</span>
           </div>
-          <div style="position:absolute;left:20px;right:20px;bottom:32px;display:flex;gap:12px">
+          <div style="display:flex;gap:12px;flex-shrink:0;margin-top:24px">
             <div role="button" onClick="{{ toggleRun }}" style="display:flex;cursor:pointer;flex:1" style-active="transform:scale(.98)"><x-import component-from-global-scope="CallioDesignSystem_481f8d.Button" type="brand" variant="secondary" size="lg" enabled="{{ true }}" has-icon-left="{{ false }}" text="{{ runLabel }}" dc-props="{{ ds.h56 }}" style="width:100%" hint-size="100%,56px"></x-import></div>
             <div role="button" onClick="{{ openModal }}" style="display:flex;cursor:pointer;flex:1" style-active="transform:scale(.98)"><x-import component-from-global-scope="CallioDesignSystem_481f8d.Button" type="brand" variant="primary" size="lg" enabled="{{ true }}" has-icon-left="{{ false }}" text="Encerrar" dc-props="{{ ds.h56 }}" style="width:100%" hint-size="100%,56px"></x-import></div>
           </div>
@@ -840,8 +840,8 @@
 
       <!-- XP RESULTADO -->
       <sc-if value="{{ is.xp }}" hint-placeholder-val="{{ false }}">
-        <div style="flex:1;display:flex;flex-direction:column;padding:24px 20px 32px;gap:24px;color:#FFFFFF;align-items:center">
-          <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;text-align:center">
+        <div class="cal-screen" style="flex:1;display:flex;flex-direction:column;padding:24px 20px 32px;gap:24px;color:#FFFFFF;align-items:center">
+          <div class="cal-center" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center">
             <span style="font-size:15px;color:var(--lightblue-500)">Sessão encerrada</span>
             <div style="display:flex;flex-direction:column;align-items:center">{{ xpBurst }}<span style="font-size:14px;color:var(--app-text-muted);margin-top:8px">XP ganhos</span></div>
             <span style="font-size:17px;font-weight:600;max-width:280px;text-wrap:pretty">{{ xp.headline }}</span>
@@ -1073,7 +1073,7 @@
 
       <!-- CONQUISTA -->
       <sc-if value="{{ is.achievement }}" hint-placeholder-val="{{ false }}">
-        <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px 20px 32px;gap:28px;color:#FFFFFF;text-align:center">
+        <div class="cal-screen cal-center" style="flex:1;display:flex;flex-direction:column;align-items:center;padding:24px 20px 32px;gap:28px;color:#FFFFFF;text-align:center">
           <div style="display:flex;flex-direction:column;align-items:center;gap:12px"><img src="assets/symbol-lightblue.svg" alt="Callio" style="width:28px;height:28px;flex-shrink:0;display:block"><span style="font-size:13px;font-weight:600;letter-spacing:.1em;color:var(--yellow-500)">CONQUISTA DESBLOQUEADA</span></div>
           {{ badgeBurst }}
           <div style="display:flex;flex-direction:column;gap:8px">
@@ -1173,7 +1173,7 @@
 
       <!-- RELATÓRIO SEMANAL -->
       <sc-if value="{{ is.weekly }}" hint-placeholder-val="{{ false }}">
-        <div style="flex:1;display:flex;flex-direction:column;padding:12px 20px 28px;gap:16px;background:{{ wk.bg }};color:{{ wk.fg }};transition:background .3s">
+        <div class="cal-screen" style="flex:1;display:flex;flex-direction:column;padding:12px 20px 28px;gap:16px;background:{{ wk.bg }};color:{{ wk.fg }};transition:background .3s">
           <div style="display:flex;align-items:center;gap:12px">
             <button onClick="{{ go.home }}" aria-label="Fechar" style="width:44px;height:44px;border-radius:12px;border:0;background:rgba(255,255,255,.18);color:{{ wk.fg }};cursor:pointer;font-size:18px;font-family:inherit">✕</button>
             <div style="flex:1;display:flex;gap:4px">
@@ -1181,7 +1181,7 @@
             </div>
           </div>
           <div style="display:flex;align-items:center;gap:8px;opacity:.85"><sc-if value="{{ wk.light }}" hint-placeholder-val="{{ true }}"><img src="assets/symbol-white.svg" alt="Callio" style="width:18px;height:18px;flex-shrink:0;display:block"></sc-if><sc-if value="{{ wk.dark }}" hint-placeholder-val="{{ false }}"><img src="assets/symbol-dark.svg" alt="Callio" style="width:18px;height:18px;flex-shrink:0;display:block"></sc-if><span style="font-size:13px;font-weight:600;letter-spacing:.08em">SUA SEMANA · 29 SET – 5 OUT</span></div>
-          <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:16px">
+          <div class="cal-center" style="flex:1;display:flex;flex-direction:column;gap:16px">
             <span style="font-size:18px;font-weight:500;opacity:.9;text-wrap:pretty">{{ wk.kicker }}</span>
             <span style="font-size:60px;font-weight:700;line-height:1;letter-spacing:-.03em">{{ wk.big }}</span>
             <span style="font-size:20px;font-weight:600;line-height:1.3;text-wrap:pretty">{{ wk.title }}</span>
@@ -1484,14 +1484,14 @@
 
       <!-- COMPARTILHAR SEMANA -->
       <sc-if value="{{ is.weeklyShare }}" hint-placeholder-val="{{ false }}">
-        <div style="flex:1;min-height:0;display:flex;flex-direction:column;padding:12px 20px 20px;gap:14px">
+        <div class="cal-screen" style="flex:1;display:flex;flex-direction:column;padding:12px 20px 20px;gap:14px">
           <div style="display:flex;align-items:center;justify-content:space-between;flex-shrink:0">
             <button onClick="{{ go.weekly }}" aria-label="Voltar" style="width:44px;height:44px;border-radius:12px;border:0;background:transparent;color:#FFFFFF;cursor:pointer;display:flex;align-items:center;justify-content:center;margin-left:-12px"><span style="display:inline-flex;line-height:0;flex-shrink:0"><x-import component-from-global-scope="CallioDesignSystem_481f8d.Icon" name="ArrowChevronLeft" size="{{ 20 }}" hint-size="20px,20px"></x-import></span></button>
             <span style="font-size:16px;font-weight:700">Compartilhar</span>
             <div style="width:44px"></div>
           </div>
-          <div style="flex:1;min-height:0;display:flex;align-items:center;justify-content:center">
-            <div style="width:270px;aspect-ratio:9/16;border-radius:22px;background:{{ shareCard.bg }};color:{{ shareCard.fg }};position:relative;overflow:hidden;box-shadow:0 24px 48px -16px rgba(0,0,0,.7);display:flex;flex-direction:column;justify-content:space-between;padding:22px 20px;box-sizing:border-box;transition:background .3s">
+          <div style="flex:1 0 auto;display:flex;align-items:center;justify-content:center">
+            <div style="width:270px;max-width:100%;flex-shrink:0;aspect-ratio:9/16;border-radius:22px;background:{{ shareCard.bg }};color:{{ shareCard.fg }};position:relative;overflow:hidden;box-shadow:0 24px 48px -16px rgba(0,0,0,.7);display:flex;flex-direction:column;justify-content:space-between;padding:22px 20px;box-sizing:border-box;transition:background .3s">
               <div style="position:absolute;width:260px;height:260px;border-radius:50%;background:{{ shareCard.blob1 }};top:-110px;right:-90px"></div>
               <div style="position:absolute;width:200px;height:200px;border-radius:50%;background:{{ shareCard.blob2 }};bottom:-80px;left:-70px"></div>
               <div style="position:relative;display:flex;flex-direction:column;gap:4px">
@@ -1677,9 +1677,9 @@
       <sc-if value="{{ showNav }}" hint-placeholder-val="{{ false }}">
         <div style="display:flex;align-items:center;gap:4px;padding:10px 12px 8px;background:var(--app-bg);box-shadow:0 -1px 0 var(--purple-800);flex-shrink:0">
           <sc-for list="{{ navItems }}" as="n" hint-placeholder-count="5">
-            <button onClick="{{ n.onClick }}" aria-label="{{ n.label }}" style="flex:{{ n.flex }};min-width:48px;height:48px;border:0;border-radius:24px;background:{{ n.pill }};display:flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;color:{{ n.color }};font-family:inherit;padding:0 14px;transition:flex .25s ease, background .2s ease;overflow:hidden">
+            <button onClick="{{ n.onClick }}" aria-label="{{ n.label }}" style="flex:{{ n.flex }};min-width:44px;height:48px;border:0;border-radius:24px;background:{{ n.pill }};display:flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;color:{{ n.color }};font-family:inherit;padding:0 12px;transition:flex .25s ease, background .2s ease;overflow:hidden">
               <span style="display:inline-flex;line-height:0;flex-shrink:0"><x-import component-from-global-scope="CallioDesignSystem_481f8d.Icon" name="{{ n.icon }}" size="{{ 22 }}" hint-size="22px,22px"></x-import></span>
-              <sc-if value="{{ n.active }}" hint-placeholder-val="{{ false }}"><span style="font-size:14px;font-weight:600;white-space:nowrap">{{ n.label }}</span></sc-if>
+              <sc-if value="{{ n.active }}" hint-placeholder-val="{{ false }}"><span class="cal-nav-label" style="font-size:14px;font-weight:600;white-space:nowrap">{{ n.label }}</span></sc-if>
             </button>
           </sc-for>
         </div>
@@ -2168,6 +2168,4 @@ class Component extends DCLogic {
   }
 }
 </script>
-
-
 </body></html>
