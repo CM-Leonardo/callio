@@ -1,0 +1,67 @@
+/* Generated from Figma Variables. First mode = :root default.
+   FLOAT tokens are unitless — multiply by 1px in calc() where a length is needed. */
+
+:root {
+  --accent-primary-900-100: rgb(252,232,3); /* @kind color */
+  --base-dark: rgb(0,0,0); /* @kind color */
+  --base-white: rgb(255,255,255); /* @kind color */
+  --dark-light-500-48: rgba(16,19,24,0.48); /* @kind color */
+  --gray-100: rgb(242,244,247); /* @kind color */
+  --gray-400: rgb(209,213,220); /* @kind color */
+  --gray-700: rgb(129,132,138); /* @kind color */
+  --gray-800: rgb(59,60,62); /* @kind color */
+  --gray-900: rgb(36,41,50); /* @kind color */
+  --grey-100: rgb(255,255,255); /* @kind color */
+  --icon-color: rgb(255,255,255); /* @kind color */
+  --light-dark-100-4: rgba(255,255,255,0.04); /* @kind color */
+  --light-dark-200-8: rgba(255,255,255,0.08); /* @kind color */
+  --light-dark-500-48: rgba(255,255,255,0.48); /* @kind color */
+  --light-dark-900-100: rgb(255,255,255); /* @kind color */
+  --md: 12; /* @kind radius */
+  --paragraph-mobile-max-width: 328; /* @kind spacing */
+  --paragraph-paragraph-max-width-mobile: 328; /* @kind spacing */
+  --radius-radius-2xl: 16;
+  --radius-radius-4xl: 24;
+  --radius-radius-full: 1000;
+  --radius-radius-md: 8;
+  --radius-radius-xl: 12;
+  --radius-radius-xs: 4;
+  --shade-800: rgb(30,33,38); /* @kind color */
+  --spacing-spacing-0: 0;
+  --spacing-spacing-1-5: 6;
+  --spacing-spacing-12: 48;
+  --spacing-spacing-16: 64;
+  --spacing-spacing-1: 4;
+  --spacing-spacing-2: 8;
+  --spacing-spacing-3: 12;
+  --spacing-spacing-4: 16;
+  --spacing-spacing-5: 20;
+  --spacing-spacing-6: 24;
+  --spacing-spacing-8: 32;
+  --width-width-sm: 480; /* @kind spacing */
+  --width-width-xl: 768; /* @kind spacing */
+  --width-width-xxs: 320; /* @kind spacing */
+  --xl-2: 22; /* @kind radius */
+  --xl: 22; /* @kind radius */
+}
+
+:root[data-theme="dark"], .dark {
+  --base-dark: rgb(255,255,255); /* @kind color */
+  --base-white: rgb(0,0,0); /* @kind color */
+  --gray-100: rgb(36,41,50); /* @kind color */
+  --gray-400: rgb(164,167,172); /* @kind color */
+  --gray-700: rgb(228,232,239); /* @kind color */
+  --gray-800: rgb(236,239,243); /* @kind color */
+  --gray-900: rgb(242,244,247); /* @kind color */
+  --grey-100: rgb(12,12,12); /* @kind color */
+}
+
+:root[data-theme="light"], .light {
+  --accent-primary-900-100: rgb(110,61,245); /* @kind color */
+  --dark-light-500-48: rgba(255,255,255,0.48); /* @kind color */
+  --light-dark-100-4: rgba(16,19,24,0.04); /* @kind color */
+  --light-dark-200-8: rgba(16,19,24,0.08); /* @kind color */
+  --light-dark-500-48: rgba(16,19,24,0.48); /* @kind color */
+  --light-dark-900-100: rgb(16,19,24); /* @kind color */
+  --shade-800: rgb(245,246,246); /* @kind color */
+}

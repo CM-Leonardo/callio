@@ -1,0 +1,27 @@
+/* Callio color palettes — transcribed from the Design-System page swatch frames
+   (Purple, Light Blue, Yellow, Green, Red/"orange"). */
+:root {
+  --purple-50: #f2eefa; --purple-100: #cec5e0; --purple-200: #b7a9d1; --purple-300: #9682bb; --purple-400: #8169ae;
+  --purple-500: #62449a; --purple-600: #593e8c; --purple-700: #46306d; --purple-800: #362555; --purple-900: #291d41;
+
+  --lightblue-50: #f8fbff; --lightblue-100: #eaf4fe; --lightblue-200: #e0eefe; --lightblue-300: #d1e6fe; --lightblue-400: #c9e1fd;
+  --lightblue-500: #bbdafd; --lightblue-600: #aac6e6; --lightblue-700: #859bb4; --lightblue-800: #67788b; --lightblue-900: #4f5c6a;
+
+  --yellow-50: #fefcf3; --yellow-100: #fcf5db; --yellow-200: #faf0c9; --yellow-300: #f8e9b1; --yellow-400: #f7e5a1;
+  --yellow-500: #f5de8a; --yellow-600: #dfca7e; --yellow-700: #ae9e62; --yellow-800: #877a4c; --yellow-900: #675d3a;
+
+  --green-50: #edf9ed; --green-100: #c7edc6; --green-200: #ace5ab; --green-300: #86d984; --green-400: #6fd16d;
+  --green-500: #4bc648; --green-600: #44b442; --green-700: #358d33; --green-800: #296d28; --green-900: #20531e;
+
+  /* The Figma frame is titled "Red"; its swatches are named orange-*. */
+  --orange-50: #ffebeb; --orange-100: #ffbfbf; --orange-200: #ffa1a1; --orange-300: #ff7676; --orange-400: #ff5b5b;
+  --orange-500: #ff3232; --orange-600: #e82e2e; --orange-700: #b52424; --orange-800: #8c1c1c; --orange-900: #6b1515;
+
+  /* Neutrals seen in the component library (forms, tags, swatch cards) */
+  --neutral-0: #ffffff; --neutral-25: #fcfcfc; --neutral-100: #f3f4f6; --neutral-200: #e5e7eb; --neutral-250: #e9ebf8;
+  --neutral-300: #d1d5db; --neutral-400: #9ca3af; --neutral-450: #8e98a8; --neutral-500: #6b7280; --neutral-600: #364153;
+  --neutral-700: #1f2937; --neutral-900: #000000;
+
+  /* Brand violet used by component-library buttons */
+  --violet-400: #a16ff2;
+}
