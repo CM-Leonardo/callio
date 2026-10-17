@@ -125,17 +125,17 @@
 
       <!-- ONBOARDING APRESENTAÇÃO -->
       <sc-if value="{{ is.onb }}" hint-placeholder-val="{{ false }}">
-        <div class="cal-screen" onTouchStart="{{ onbSwipe.start }}" onTouchEnd="{{ onbSwipe.end }}" onPointerDown="{{ onbSwipe.start }}" onPointerUp="{{ onbSwipe.end }}" style="flex:1;display:flex;flex-direction:column;padding:8px 24px 24px;position:relative;touch-action:pan-y;user-select:none;background:{{ onb.bg }};color:{{ onb.fg }};transition:background .3s ease">
+        <div class="cal-screen" onTouchStart="{{ onbSwipe.start }}" onTouchEnd="{{ onbSwipe.end }}" onPointerDown="{{ onbSwipe.start }}" onPointerUp="{{ onbSwipe.end }}" style="flex:1;display:flex;flex-direction:column;padding:8px 24px 24px;position:relative;overflow:hidden;touch-action:pan-y;user-select:none;background:{{ onb.bg }};color:{{ onb.fg }};transition:background .3s ease">
           <div aria-hidden="true" style="position:absolute;left:0;right:0;top:0;aspect-ratio:360 / 760;background-image:{{ onb.art }};background-size:100% auto;background-repeat:no-repeat;background-position:top center;pointer-events:none"></div>
           <div style="display:flex;justify-content:flex-end;align-items:center;position:relative;flex-shrink:0">
             <button onClick="{{ go.p0 }}" style="height:44px;flex-shrink:0;padding:0 4px 0 12px;border:0;background:transparent;color:{{ onb.fg }};font-family:inherit;font-size:14px;font-weight:600;cursor:pointer">Pular</button>
           </div>
-          <div aria-hidden="true" style="margin:0 -24px;aspect-ratio:{{ onb.spacer }};flex-shrink:0"></div>
+          <div aria-hidden="true" style="margin:0 -24px;aspect-ratio:{{ onb.spacer }};flex:0 1 auto;min-height:0"></div>
           <div style="display:flex;flex-direction:column;gap:14px;position:relative;flex-shrink:0">
             <h1 style="margin:0;font-size:28px;line-height:1.2;font-weight:700;letter-spacing:-.01em;text-wrap:balance;color:{{ onb.fg }}">{{ onb.title }}</h1>
             <p style="margin:0;font-size:16px;line-height:1.5;color:{{ onb.sub }};text-wrap:pretty;font-weight:500">{{ onb.body }}</p>
           </div>
-          <div style="flex:1;min-height:24px"></div>
+          <div style="flex:1 1 0;min-height:8px"></div>
           <div style="display:flex;align-items:center;justify-content:space-between;position:relative;flex-shrink:0">
             <div onClick="{{ go.home }}" role="button" aria-label="Ir para a Home" style="display:flex;align-items:center;gap:6px;padding:18px 0;cursor:pointer">
               <sc-for list="{{ onb.dots }}" as="d" hint-placeholder-count="3"><div style="width:{{ d.w }}px;height:8px;border-radius:4px;background:{{ d.bg }};transition:width .25s ease"></div></sc-for>
