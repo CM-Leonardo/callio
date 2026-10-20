@@ -11,6 +11,9 @@
     sunrise: '<path d="M24 66 A26 26 0 0 1 76 66 Z"/><rect x="12" y="70" width="76" height="9" rx="4.5"/><rect x="46" y="18" width="8" height="18" rx="4"/><rect x="17" y="34" width="8" height="18" rx="4" transform="rotate(-45 21 43)"/><rect x="75" y="34" width="8" height="18" rx="4" transform="rotate(45 79 43)"/>',
     bookmark: '<path d="M30 12 H70 Q74 12 74 16 V88 L50 72 L26 88 V16 Q26 12 30 12Z"/>',
     stack: '<rect x="16" y="64" width="68" height="16" rx="4"/><rect x="24" y="44" width="58" height="16" rx="4"/><rect x="18" y="24" width="54" height="16" rx="4"/>',
+    calendar: '<rect x="14" y="20" width="72" height="66" rx="10"/><rect x="28" y="10" width="9" height="18" rx="4.5"/><rect x="63" y="10" width="9" height="18" rx="4.5"/><path d="M32 56 L45 69 L70 42" fill="none" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>',
+    compass: '<circle cx="50" cy="50" r="38"/><path d="M50 18 L60 50 L50 82 L40 50 Z" fill="#2c1d4c" fill-opacity=".35" stroke-width="2.5"/>',
+    people: '<circle cx="34" cy="34" r="13"/><circle cx="66" cy="34" r="13"/><path d="M12 82 C12 62 22 54 34 54 C46 54 56 62 56 82 Z"/><path d="M44 82 C44 62 54 54 66 54 C78 54 88 62 88 82 Z"/>',
     scroll: '<path d="M30 14 H80 Q86 14 86 20 V76 H30 Z"/><circle cx="24" cy="22" r="10"/><rect x="12" y="72" width="80" height="18" rx="9"/><path d="M98 22 C84 22 70 34 64 52 L68 56 C86 50 98 38 98 22 Z"/>',
   };
   const INK = '#2c1d4c';
@@ -25,6 +28,12 @@
     livros10: { n: '10', u: 'LIVROS', en: 'b', g: 'stack' },
     chamas: { g: 'flame', en: 'y' },
     review: { g: 'scroll', en: 'b' },
+    tresdias: { g: 'calendar', en: 'b' },
+    sessao20: { n: '20', u: 'MIN', en: 'p', g: 'hourglass' },
+    termine: { g: 'book', en: 'y' },
+    maratonista: { n: '2H', u: 'NA SEMANA', en: 'p', g: 'hourglass' },
+    cartografo: { g: 'compass', en: 'b' },
+    fundador: { g: 'people', en: 'y' },
   };
   const TINT = { p: '#62449a', y: '#e9c55a', b: '#7fb2ea' };
   const ORB = { p: '#f5de8a', y: '#9682bb', b: '#9682bb' };
@@ -80,8 +89,9 @@ ${on ? spark(178, 132, 9) + spark(24, 160, 6, '#f5de8a') + spark(60, 52, 6) : ''
 
   function svg(key, style, on, size) {
     const c = CAT[key] || CAT.sete;
-    const body = style === '2b' ? holo(c, on) : metalGlass(c, on);
-    return `<svg viewBox="0 0 200 200" width="${size}" height="${size}" style="display:block;overflow:visible" role="img"><g${on ? '' : ' filter="url(#cb-gray)"'}>${body}</g>${on ? '' : lock}</svg>`;
+    const prog = on === 'progress'; const lit = on === true;
+    const body = style === '2b' ? holo(c, lit) : metalGlass(c, lit);
+    return `<svg viewBox="0 0 200 200" width="${size}" height="${size}" style="display:block;overflow:visible" role="img"><g${lit ? '' : ' filter="url(#cb-gray)"'}${prog ? ' opacity=".9"' : ''}>${body}</g>${lit || prog ? '' : lock}</svg>`;
   }
 
   function inject() { if (document.getElementById('cb-defs')) return; const d = document.createElement('div'); d.id = 'cb-defs'; d.innerHTML = DEFS; document.body.appendChild(d); }
